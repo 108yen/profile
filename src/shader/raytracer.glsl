@@ -241,5 +241,12 @@ void main() {
         color += galaxy_color(tex_coord, ray_doppler_factor) * GALAXY_BRIGHTNESS;
     }
 
-    gl_FragColor = color*ray_intensity;
+    vec4 computedColor = color*ray_intensity;
+    gl_FragColor = computedColor;
+
+    // if(computedColor.r<0.1&&computedColor.g<0.1&&computedColor.b<0.1) {
+    //     gl_FragColor = vec4(1.0 - computedColor.rgb, computedColor.a);
+    // } else { 
+    //     gl_FragColor = computedColor;
+    // }
 }

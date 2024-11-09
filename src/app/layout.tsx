@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" style={{ colorScheme: "dark" }}>
       <head>
         <link
           href="https://avatars.githubusercontent.com/u/9676316?v=4"
@@ -24,7 +24,7 @@ export default function RootLayout({
           sizes="32x32"
         />
       </head>
-      
+
       <body>
         <div className="background">
           <Blackhole />
