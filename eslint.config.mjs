@@ -30,6 +30,7 @@ const sourceFilePaths = {
     "**/*.mts",
     "**/*.tsx",
     "**/*.d.ts",
+    "**/*.css"
   ],
   js: ["**/*.js", "**/*.cjs", "**/*.mjs", "**/*.jsx"],
   ts: ["**/*.ts", "**/*.cts", "**/*.mts", "**/*.tsx", "**/*.d.ts"],
@@ -137,10 +138,11 @@ const typescriptTSESConfigArray = [
       // https://typescript-eslint.io/rules/consistent-type-definitions
       "@typescript-eslint/consistent-type-definitions": "off",
       "@typescript-eslint/no-empty-function": "off",
-      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-empty-object-type":"off",
 
+      "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/no-inferrable-types": "off",
-      "@typescript-eslint/no-unnecessary-type-constraint": "off",
+      "@typescript-eslint/no-unnecessary-type-constraint": "off" 
     },
   },
 

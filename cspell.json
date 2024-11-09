@@ -2,6 +2,7 @@
   "words": [
     "automerge",
     "Blackhole",
+    "Bluesky",
     "commitlint",
     "compat",
     "glsl",
@@ -13,6 +14,7 @@
     "Shirai",
     "TSES",
     "tseslint",
-    "typecheck"
+    "typecheck",
+    "Zenn"
   ]
 }

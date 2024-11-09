@@ -7,7 +7,7 @@ import { Blackhole } from "./components/layout"
 
 export const metadata: Metadata = {
   description: "Web engineer and security specialist",
-  title: "Kazuki Shirai / 108yen",
+  title: "Kazuki Shirai",
 }
 
 export default function RootLayout({
