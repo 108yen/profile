@@ -1,6 +1,9 @@
 import type { Metadata } from "next"
 
-import "../styles/reset.css"
+import "@/styles/reset.css"
+import "@/styles/layout.css"
+
+import { Blackhole } from "./components/layout"
 
 export const metadata: Metadata = {
   description: "Web engineer and security specialist",
@@ -14,7 +17,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <div className="background">
+          <Blackhole />
+        </div>
+
+        <div className="container">{children}</div>
+      </body>
     </html>
   )
 }

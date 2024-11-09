@@ -1,5 +1,5 @@
-import { Blackhole } from "./components/layout"
+import { Home } from "@/templates"
 
-export default function Home() {
-  return <Blackhole />
+export default function Page() {
+  return <Home />
 }
