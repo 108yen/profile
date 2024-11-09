@@ -17,6 +17,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          href="https://avatars.githubusercontent.com/u/9676316?v=4"
+          rel="icon"
+          sizes="32x32"
+        />
+      </head>
+      
       <body>
         <div className="background">
           <Blackhole />

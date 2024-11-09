@@ -55,6 +55,12 @@ export function Home() {
           </ol>
         </nav>
       </header>
+
+      <main>
+        <section>
+          Products
+        </section>
+      </main>
     </div>
   )
 }
