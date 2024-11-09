@@ -1,3 +1,5 @@
+import { Blackhole } from "./components/layout"
+
 export default function Home() {
-  return <>page</>
+  return <Blackhole />
 }

@@ -1,0 +1,220 @@
+"use client"
+import { BLACKHOLE } from "@/constant"
+import raytracer from "@/shader/raytracer.glsl"
+import vertex from "@/shader/vertex.vert"
+import { useEffect, useRef } from "react"
+import {
+  Clock,
+  LinearFilter,
+  MathUtils,
+  Matrix3,
+  Matrix4,
+  Mesh,
+  NearestFilter,
+  PerspectiveCamera,
+  PlaneGeometry,
+  Scene,
+  ShaderMaterial,
+  Texture,
+  TextureLoader,
+  Vector2,
+  Vector3,
+  WebGLRenderer,
+} from "three"
+
+class Observer {
+  alpha = MathUtils.degToRad(BLACKHOLE.ORBITAL_INCLINATION)
+  v = 1.0 / Math.sqrt(2.0 * (BLACKHOLE.DISTANCE - 1.0))
+  ang_vel = this.v / BLACKHOLE.DISTANCE
+  camera_matrix = new Matrix3(
+    0.469,
+    -0.08,
+    -0.87,
+    0.88,
+    0.04,
+    0.46,
+    0,
+    0.99,
+    -0.09,
+  )
+
+  orbit_coords = new Matrix4().makeRotationY(this.alpha)
+
+  orientation = new Matrix3()
+  position = new Vector3(0, 0, 0)
+
+  time = 0
+  velocity = new Vector3(0, 0, 0)
+
+  private linearPart(
+    orbital_x: Vector3,
+    orbital_y: Vector3,
+    orbital_z: Vector3,
+  ) {
+    return new Matrix3(
+      orbital_x.x,
+      orbital_y.x,
+      orbital_z.x,
+      orbital_x.y,
+      orbital_y.y,
+      orbital_z.y,
+      orbital_x.z,
+      orbital_y.z,
+      orbital_z.z,
+    )
+  }
+
+  private orbitalFrame() {
+    const orbital_y = new Vector3()
+      .subVectors(
+        this.velocity.clone().normalize().multiplyScalar(4.0),
+        this.position,
+      )
+      .normalize()
+    const orbital_z = new Vector3()
+      .crossVectors(this.position, orbital_y)
+      .normalize()
+    const orbital_x = new Vector3().crossVectors(orbital_y, orbital_z)
+    const orbital = this.linearPart(orbital_x, orbital_y, orbital_z)
+
+    this.orientation = orbital.multiply(this.camera_matrix)
+  }
+
+  move(dtProp: number) {
+    const dt = dtProp * BLACKHOLE.TIME_SCALE
+
+    const angle = this.time * this.ang_vel
+
+    const s = Math.sin(angle)
+    const c = Math.cos(angle)
+
+    this.position.set(
+      c * BLACKHOLE.DISTANCE,
+      s * BLACKHOLE.DISTANCE,
+      BLACKHOLE.Z,
+    )
+    this.velocity.set(-s * this.v, c * this.v, BLACKHOLE.ROTATE)
+
+    this.position.applyMatrix4(this.orbit_coords)
+    this.velocity.applyMatrix4(this.orbit_coords)
+
+    this.orbitalFrame()
+
+    this.time += dt
+  }
+}
+
+export function Blackhole() {
+  const canvasRef = useRef<HTMLCanvasElement>(null)
+
+  useEffect(() => {
+    const canvas = canvasRef.current
+    if (!canvas) return
+
+    const observer = new Observer()
+
+    const scene = new Scene()
+    const renderer = new WebGLRenderer({ canvas })
+    const geometry = new PlaneGeometry(2, 2)
+    const camera = new PerspectiveCamera(
+      45,
+      window.innerWidth / window.innerHeight,
+      1,
+      80000,
+    )
+    const clock = new Clock()
+    const textureLoader = new TextureLoader()
+
+    const uniforms = {
+      accretion_disk_texture: { type: "t", value: null as null | Texture },
+      cam_pos: { type: "v3", value: new Vector3() },
+      cam_x: { type: "v3", value: new Vector3() },
+      cam_y: { type: "v3", value: new Vector3() },
+      cam_z: { type: "v3", value: new Vector3() },
+      galaxy_texture: { type: "t", value: null as null | Texture },
+      resolution: { type: "v2", value: new Vector2() },
+      spectrum_texture: { type: "t", value: null as null | Texture },
+      star_texture: { type: "t", value: null as null | Texture },
+    }
+
+    const material = new ShaderMaterial({
+      fragmentShader: raytracer,
+      uniforms,
+      vertexShader: vertex,
+    })
+
+    const mesh = new Mesh(geometry, material)
+    scene.add(mesh)
+
+    function loadTexture(
+      symbol: keyof typeof uniforms,
+      filename: string,
+      interpolation: typeof LinearFilter | typeof NearestFilter,
+    ) {
+      textureLoader.load(filename, (data) => {
+        const texture = data
+        texture.magFilter = interpolation
+        texture.minFilter = interpolation
+
+        uniforms[symbol].value = texture
+      })
+    }
+
+    function updateUniforms() {
+      uniforms.resolution.value.x = renderer.domElement.width
+      uniforms.resolution.value.y = renderer.domElement.height
+
+      uniforms.cam_pos.value = observer.position
+
+      const e = observer.orientation.elements
+
+      uniforms.cam_x.value.set(e[0], e[1], e[2])
+      uniforms.cam_y.value.set(e[3], e[4], e[5])
+      uniforms.cam_z.value.set(e[6], e[7], e[8])
+
+      function setVec(target: "cam_pos", value: Vector3) {
+        uniforms[target].value.set(value.x, value.y, value.z)
+      }
+
+      setVec("cam_pos", observer.position)
+    }
+
+    function onWindowResize() {
+      const width = window.innerWidth
+      const height = window.innerHeight
+
+      renderer.setSize(width, height, false)
+
+      updateUniforms()
+    }
+
+    function animate() {
+      requestAnimationFrame(animate)
+
+      observer.move(clock.getDelta())
+      updateUniforms()
+
+      renderer.render(scene, camera)
+    }
+
+    loadTexture("spectrum_texture", "img/spectra.png", LinearFilter)
+    loadTexture("star_texture", "img/stars.png", LinearFilter)
+    loadTexture(
+      "accretion_disk_texture",
+      "img/accretion-disk_oil-2.png",
+      LinearFilter,
+    )
+
+    window.addEventListener("resize", onWindowResize, false)
+
+    onWindowResize()
+    updateUniforms()
+    animate()
+
+    return () => {
+      window.removeEventListener("resize", onWindowResize)
+    }
+  }, [])
+
+  return <canvas ref={canvasRef} />
+}
