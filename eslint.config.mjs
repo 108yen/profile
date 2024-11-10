@@ -29,8 +29,7 @@ const sourceFilePaths = {
     "**/*.cts",
     "**/*.mts",
     "**/*.tsx",
-    "**/*.d.ts",
-    "**/*.css"
+    "**/*.d.ts"
   ],
   js: ["**/*.js", "**/*.cjs", "**/*.mjs", "**/*.jsx"],
   ts: ["**/*.ts", "**/*.cts", "**/*.mts", "**/*.tsx", "**/*.d.ts"],
