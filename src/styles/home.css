@@ -2,12 +2,20 @@ main {
   margin-top: 4rem;
 }
 
-.content {
+.accordion {
   margin: 1rem 0;
 }
 
-.content h2 {
+.accordion h2 {
   margin: 0;
+}
+
+.accordion h2 button {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-weight: 400;
 }
 
 ol {
