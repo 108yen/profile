@@ -25,6 +25,9 @@ jobs:
       pull-requests: write
       contents: write
 
+    outputs:
+      hasChangesets: ${{ steps.changesets.outputs.hasChangesets }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -45,3 +48,15 @@ jobs:
         uses: changesets/action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  quality:
+    name: Quality
+
+    needs: version
+    if: needs.version.outputs.hasChangesets == 'true'
+
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    uses: ./.github/workflows/quality.yml
