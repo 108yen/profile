@@ -82,19 +82,6 @@ export function Home() {
             <ol>
               <li>
                 <Link
-                  aria-label="AWS SAA Link"
-                  className="link"
-                  href="https://www.credly.com/badges/34605602-4be2-47de-8ffe-a85401649b31"
-                  target="_blank"
-                >
-                  AWS Certified Solutions Architect - Associate
-                </Link>
-
-                <span className="tag">Expired</span>
-              </li>
-
-              <li>
-                <Link
                   aria-label="CompTIA Security+ Link"
                   className="link"
                   href="https://www.credly.com/badges/390af6d6-0529-4c1a-b08d-db17d5c3db2f"
@@ -107,6 +94,19 @@ export function Home() {
               </li>
 
               <li>情報処理安全確保支援士</li>
+
+              <li>
+                <Link
+                  aria-label="AWS SAA Link"
+                  className="link"
+                  href="https://www.credly.com/badges/34605602-4be2-47de-8ffe-a85401649b31"
+                  target="_blank"
+                >
+                  AWS Certified Solutions Architect - Associate
+                </Link>
+
+                <span className="tag">Expired</span>
+              </li>
 
               <li>
                 <Link

@@ -27,6 +27,21 @@ class Observer {
 
   constructor(isMobile: boolean) {
     this.isMobile = isMobile
+
+    const camera_pos = this.isMobile
+      ? BLACKHOLE.CAMERA_POS.MOBILE
+      : BLACKHOLE.CAMERA_POS.BASE
+    this.camera_matrix.set(
+      camera_pos[0],
+      camera_pos[1],
+      camera_pos[2],
+      camera_pos[3],
+      camera_pos[4],
+      camera_pos[5],
+      camera_pos[6],
+      camera_pos[7],
+      camera_pos[8],
+    )
   }
 
   distance = this.isMobile ? BLACKHOLE.DISTANCE.MOBILE : BLACKHOLE.DISTANCE.BASE
@@ -34,17 +49,8 @@ class Observer {
 
   v = 1.0 / Math.sqrt(2.0 * (this.distance - 1.0))
   ang_vel = this.v / this.distance
-  camera_matrix = new Matrix3(
-    0.469,
-    -0.08,
-    -0.87,
-    0.88,
-    0.04,
-    0.46,
-    0,
-    0.99,
-    -0.09,
-  )
+
+  camera_matrix = new Matrix3()
 
   orbit_coords = new Matrix4().makeRotationY(this.alpha)
 

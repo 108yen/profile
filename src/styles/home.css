@@ -16,6 +16,10 @@ main {
   border: none;
   font-family: inherit;
   font-weight: 400;
+  transition: opacity 0.3s ease;
+  &:hover {
+    opacity: 0.7;
+  }
 }
 
 ol {
@@ -26,10 +30,10 @@ ol {
 
 @media (max-width: 768px) {
   ol {
-      list-style-type: disc;
-      margin: 0.3rem 0;
-      padding-left: 1.5rem;
-    }
+    list-style-type: disc;
+    margin: 0.3rem 0;
+    padding-left: 1.5rem;
+  }
 }
 
 ol ol {
@@ -43,7 +47,7 @@ li p {
 .link {
   color: white;
   text-decoration: none;
-  &:hover{
+  &:hover {
     text-decoration-line: underline;
   }
 }

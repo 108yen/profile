@@ -48,10 +48,8 @@
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-unused-imports": "^4.1.4",
     "globals": "^15.12.0",
-    "glslify-loader": "^2.0.0",
     "lefthook": "^1.7.14",
     "prettier": "^3.0.3",
-    "raw-loader": "^4.0.2",
     "svelte-eslint-parser": "^0.43.0",
     "typescript": "^5",
     "typescript-eslint": "^8.0.1"
