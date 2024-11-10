@@ -6,8 +6,24 @@ import "@/styles/layout.css"
 import { Blackhole } from "./components/layout"
 
 export const metadata: Metadata = {
-  description: "Web engineer and security specialist",
+  description: "Web engineer, security specialist",
+  metadataBase: new URL("https://108yen.github.io/profile"),
+  openGraph: {
+    description: "Web engineer, security specialist",
+    images: [
+      {
+        type: "image/png",
+        url: "/android-chrome-512x512.png",
+      },
+    ],
+    siteName: "Profile of Kazuki Shirai",
+    title: "Kazuki Shirai",
+    type: "website",
+  },
   title: "Kazuki Shirai",
+  twitter: {
+    card: "summary",
+  },
 }
 
 export default function RootLayout({
@@ -17,14 +33,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" style={{ colorScheme: "dark" }}>
-      <head>
-        <link
-          href="https://avatars.githubusercontent.com/u/9676316?v=4"
-          rel="icon"
-          sizes="32x32"
-        />
-      </head>
-
       <body>
         <div className="background">
           <Blackhole />
