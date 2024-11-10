@@ -1,7 +1,7 @@
 export const BLACKHOLE = {
   DISTANCE: 5.0,
   ORBITAL_INCLINATION: 0,
-  ROTATE: -0.1,
+  ROTATE: -0.15,
   TIME_SCALE: 0.3,
   Z: 0.05,
 }

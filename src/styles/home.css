@@ -24,6 +24,14 @@ ol {
   padding-left: 1.5rem;
 }
 
+@media (max-width: 768px) {
+  ol {
+      list-style-type: disc;
+      margin: 0.3rem 0;
+      padding-left: 1.5rem;
+    }
+}
+
 ol ol {
   list-style-type: circle;
 }
