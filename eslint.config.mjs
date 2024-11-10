@@ -278,7 +278,10 @@ const sortTSESConfig = {
   plugins: {
     perfectionist,
   },
-  rules: perfectionist.configs["recommended-natural"].rules,
+  rules: {
+    ...perfectionist.configs["recommended-natural"].rules,
+    "perfectionist/sort-classes":"off"
+  },
 }
 
 /** @type {Pick<TSESLintConfig, "name" | "files" | "plugins" | "rules" | "settings">} */

@@ -2,7 +2,7 @@
 import { BLACKHOLE } from "@/constant"
 import raytracer from "@/shader/raytracer.glsl"
 import vertex from "@/shader/vertex.vert"
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import {
   Clock,
   LinearFilter,
@@ -23,9 +23,17 @@ import {
 } from "three"
 
 class Observer {
+  isMobile = false
+
+  constructor(isMobile: boolean) {
+    this.isMobile = isMobile
+  }
+
+  distance = this.isMobile ? BLACKHOLE.DISTANCE.MOBILE : BLACKHOLE.DISTANCE.BASE
   alpha = MathUtils.degToRad(BLACKHOLE.ORBITAL_INCLINATION)
-  v = 1.0 / Math.sqrt(2.0 * (BLACKHOLE.DISTANCE - 1.0))
-  ang_vel = this.v / BLACKHOLE.DISTANCE
+
+  v = 1.0 / Math.sqrt(2.0 * (this.distance - 1.0))
+  ang_vel = this.v / this.distance
   camera_matrix = new Matrix3(
     0.469,
     -0.08,
@@ -87,12 +95,13 @@ class Observer {
 
     const s = Math.sin(angle)
     const c = Math.cos(angle)
+    const z = this.isMobile ? BLACKHOLE.Z.MOBILE : BLACKHOLE.Z.BASE
 
-    this.position.set(
-      c * BLACKHOLE.DISTANCE,
-      s * BLACKHOLE.DISTANCE,
-      BLACKHOLE.Z,
-    )
+    const distance = this.isMobile
+      ? BLACKHOLE.DISTANCE.MOBILE
+      : BLACKHOLE.DISTANCE.BASE
+
+    this.position.set(c * distance, s * distance, z)
     this.velocity.set(-s * this.v, c * this.v, BLACKHOLE.ROTATE)
 
     this.position.applyMatrix4(this.orbit_coords)
@@ -106,12 +115,15 @@ class Observer {
 
 export function Blackhole() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const [width, setWidth] = useState(0)
+
+  const isMobile = width < 768
 
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
 
-    const observer = new Observer()
+    const observer = new Observer(isMobile)
 
     const scene = new Scene()
     const renderer = new WebGLRenderer({ canvas })
@@ -180,10 +192,9 @@ export function Blackhole() {
     }
 
     function onWindowResize() {
-      const width = window.innerWidth
-      const height = window.innerHeight
+      setWidth(window.innerWidth)
 
-      renderer.setSize(width, height, false)
+      renderer.setSize(window.innerWidth, window.innerHeight, false)
 
       updateUniforms()
     }
@@ -214,7 +225,7 @@ export function Blackhole() {
     return () => {
       window.removeEventListener("resize", onWindowResize)
     }
-  }, [])
+  }, [isMobile])
 
   return <canvas ref={canvasRef} />
 }
