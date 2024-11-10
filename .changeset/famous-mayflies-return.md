@@ -1,5 +1,0 @@
----
-"profile": major
----
-
-First release.
