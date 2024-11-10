@@ -1,5 +1,11 @@
 # profile
 
+## 1.1.1
+
+### Patch Changes
+
+- [`1798bba`](https://github.com/108yen/profile/commit/1798bbadab49b01ceeee599fc30423d9a30c8c91) Thanks [@108yen](https://github.com/108yen)! - Fixed accordion title styles is different on iOS device.
+
 ## 1.1.0
 
 ### Minor Changes
