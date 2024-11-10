@@ -5,11 +5,11 @@
 name: Deploy
 
 on:
-  # Runs on pushes targeting the default branch
-  push:
-    branches: ["main"]
-
-  # Allows you to run this workflow manually from the Actions tab
+  pull_request_target:
+    types:
+      - closed
+    branches:
+      - main
   workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
@@ -26,6 +26,10 @@ concurrency:
 
 jobs:
   build:
+    name: Build
+
+    if: github.event.pull_request.merged == true && startsWith(github.head_ref, 'changeset-release')
+
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -76,3 +80,16 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  release:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Release
+        run: 108yen/changeset-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
