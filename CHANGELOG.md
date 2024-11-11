@@ -1,5 +1,11 @@
 # profile
 
+## 1.2.1
+
+### Patch Changes
+
+- [`aa4b99c`](https://github.com/108yen/profile/commit/aa4b99cee1aeb5c59308648e709c993e80b3d7aa) Thanks [@108yen](https://github.com/108yen)! - Fixed favicon is not set.
+
 ## 1.2.0
 
 ### Minor Changes
