@@ -1,5 +1,11 @@
 # profile
 
+## 1.3.1
+
+### Patch Changes
+
+- [`1267a4c`](https://github.com/108yen/profile/commit/1267a4c4aaee3812d42eab57eeb05742ea13dcbc) Thanks [@108yen](https://github.com/108yen)! - Fixed that caption is overflow on iPad.
+
 ## 1.3.0
 
 ### Minor Changes
