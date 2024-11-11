@@ -1,12 +1,18 @@
-import { HTMLAttributes } from "react"
+import { findPackages } from "find-packages"
 import "@/styles/footer.css"
+import { HTMLAttributes } from "react"
 
 interface FooterProps extends HTMLAttributes<HTMLElement> {}
 
-export function Footer(props: FooterProps) {
+export async function Footer(props: FooterProps) {
+  const packages = await findPackages("./")
+  const { version } = packages[0].manifest
+
   return (
     <div className="caption" {...props}>
-      © 2024 Kazuki Shirai.
+      {`v${version}`}
+      <br />
+      ©2024 Kazuki Shirai.
     </div>
   )
 }
