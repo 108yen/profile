@@ -45,7 +45,7 @@ export function Home() {
             <ol>
               <li>Typescript</li>
               <li>React</li>
-              <li>Next.js - Pages Router, App Router</li>
+              <li>Next.js</li>
               <li>Web Accessibility</li>
               <li>Google Cloud</li>
               <li>Github Actions</li>
@@ -73,6 +73,17 @@ export function Home() {
                   target="_blank"
                 >
                   copipe
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  aria-label="Changeset-release Link"
+                  className="link"
+                  href="https://github.com/108yen/changeset-release"
+                  target="_blank"
+                >
+                  changeset-release
                 </Link>
               </li>
             </ol>
