@@ -1,5 +1,19 @@
 # profile
 
+## 1.2.0
+
+### Minor Changes
+
+- [`1a07358`](https://github.com/108yen/profile/commit/1a073586e883dbdc31b1add5eb39623f42ac25cb) Thanks [@108yen](https://github.com/108yen)! - Added footer.
+
+### Patch Changes
+
+- [`fedc713`](https://github.com/108yen/profile/commit/fedc71319c30e09d4b5fe2ce1cdc67ae53f6fceb) Thanks [@108yen](https://github.com/108yen)! - Updated products content.
+
+- [`fe7d211`](https://github.com/108yen/profile/commit/fe7d211ee39bafb6f26f37f24dd9b082ab829c6e) Thanks [@108yen](https://github.com/108yen)! - Fixed no favicon.
+
+- [`9ae3c33`](https://github.com/108yen/profile/commit/9ae3c33d5696275c16561e4d838c577abcaae82d) Thanks [@108yen](https://github.com/108yen)! - Change content to scrollable.
+
 ## 1.1.1
 
 ### Patch Changes
