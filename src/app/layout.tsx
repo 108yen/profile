@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 
 import "@/styles/reset.css"
 import "@/styles/layout.css"
+import { AnalyticsScript } from "@/components/google-analytics"
 import { Blackhole, Footer } from "@/components/layout"
 
 export const metadata: Metadata = {
@@ -40,6 +41,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" style={{ colorScheme: "dark" }}>
+      <head>
+        <AnalyticsScript debugMode={process.env.NODE_ENV == "development"} />
+      </head>
+
       <body>
         <div className="stack">
           <Blackhole className="background" />
