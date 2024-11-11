@@ -2,7 +2,7 @@
 import { BLACKHOLE } from "@/constant"
 import raytracer from "@/shader/raytracer.glsl"
 import vertex from "@/shader/vertex.vert"
-import { useEffect, useRef, useState } from "react"
+import { CanvasHTMLAttributes, useEffect, useRef, useState } from "react"
 import {
   Clock,
   LinearFilter,
@@ -119,7 +119,9 @@ class Observer {
   }
 }
 
-export function Blackhole() {
+interface BlackholeProps extends CanvasHTMLAttributes<HTMLCanvasElement> {}
+
+export function Blackhole(props: BlackholeProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [width, setWidth] = useState(0)
 
@@ -233,5 +235,5 @@ export function Blackhole() {
     }
   }, [isMobile])
 
-  return <canvas ref={canvasRef} />
+  return <canvas ref={canvasRef} {...props} />
 }

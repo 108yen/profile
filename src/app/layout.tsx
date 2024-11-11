@@ -33,11 +33,11 @@ export default function RootLayout({
   return (
     <html lang="en" style={{ colorScheme: "dark" }}>
       <body>
-        <div className="background">
-          <Blackhole />
-        </div>
+        <div className="stack">
+          <Blackhole className="background" />
 
-        <div className="container">{children}</div>
+          <div className="container">{children}</div>
+        </div>
       </body>
     </html>
   )

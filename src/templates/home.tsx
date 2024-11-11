@@ -5,7 +5,7 @@ import Link from "next/link"
 
 export function Home() {
   return (
-    <>
+    <div className="home-container">
       <Header />
 
       <main>
@@ -188,6 +188,6 @@ export function Home() {
           </AccordionItem>
         </Accordion>
       </main>
-    </>
+    </div>
   )
 }
