@@ -1,5 +1,15 @@
 # profile
 
+## 1.3.0
+
+### Minor Changes
+
+- [`44a7705`](https://github.com/108yen/profile/commit/44a7705555286f82cecf867875e6990ed27b5cfa) Thanks [@108yen](https://github.com/108yen)! - Added Google Analytics.
+
+### Patch Changes
+
+- [`31ac907`](https://github.com/108yen/profile/commit/31ac907099a2802f3ae9a7986827f28733d4e3af) Thanks [@108yen](https://github.com/108yen)! - Added display of version.
+
 ## 1.2.2
 
 ### Patch Changes
