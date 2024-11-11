@@ -3,7 +3,7 @@ import {
   GithubIcon,
   XIcon,
   ZennIcon,
-} from "@/app/components/media-and-icons"
+} from "@/components/media-and-icons"
 import Link from "next/link"
 import "@/styles/header.css"
 

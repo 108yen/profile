@@ -1,5 +1,5 @@
-import { Accordion, AccordionItem } from "@/app/components/disclosure"
-import { Header } from "@/app/components/layout"
+import { Accordion, AccordionItem } from "@/components/disclosure"
+import { Header } from "@/components/layout"
 import "@/styles/home.css"
 import Link from "next/link"
 
