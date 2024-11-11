@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 
 import "@/styles/reset.css"
 import "@/styles/layout.css"
-import { Blackhole } from "@/components/layout"
+import { Blackhole, Footer } from "@/components/layout"
 
 export const metadata: Metadata = {
   description: "Web engineer, security specialist",
@@ -37,6 +37,8 @@ export default function RootLayout({
           <Blackhole className="background" />
 
           <div className="container">{children}</div>
+
+          <Footer />
         </div>
       </body>
     </html>

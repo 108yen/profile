@@ -1,0 +1,10 @@
+.caption {
+  position: fixed;
+  bottom: 0;
+  z-index: 2;
+  color: white;
+  font-size: 0.75rem;
+  opacity: 0.4;
+  width: 100vw;
+  text-align: center;
+}

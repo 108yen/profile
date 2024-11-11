@@ -1,0 +1,5 @@
+---
+"profile": minor
+---
+
+Added footer.
