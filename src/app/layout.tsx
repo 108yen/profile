@@ -6,6 +6,14 @@ import { Blackhole, Footer } from "@/components/layout"
 
 export const metadata: Metadata = {
   description: "Web engineer, security specialist",
+  icons: [
+    {
+      rel: "icon",
+      sizes: "48x48",
+      type: "image/x-icon",
+      url: "./favicon.ico",
+    },
+  ],
   metadataBase: new URL("https://108yen.github.io/profile"),
   openGraph: {
     description: "Web engineer, security specialist",
