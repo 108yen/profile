@@ -1,5 +1,11 @@
 # profile
 
+## 1.2.2
+
+### Patch Changes
+
+- [`f697868`](https://github.com/108yen/profile/commit/f69786840c916c2f6e1839513ac26c4c6c3607c8) Thanks [@108yen](https://github.com/108yen)! - Fixed accordion item is stack when close.
+
 ## 1.2.1
 
 ### Patch Changes
