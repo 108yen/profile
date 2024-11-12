@@ -1,5 +1,11 @@
 # profile
 
+## 1.3.2
+
+### Patch Changes
+
+- [`50c40d1`](https://github.com/108yen/profile/commit/50c40d11938fc7cfb5ce84b1f691a216a9b3ebca) Thanks [@108yen](https://github.com/108yen)! - Fixed styles of nested list.
+
 ## 1.3.1
 
 ### Patch Changes
