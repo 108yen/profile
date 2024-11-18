@@ -1,5 +1,11 @@
 # profile
 
+## 1.3.3
+
+### Patch Changes
+
+- [#19](https://github.com/108yen/profile/pull/19) [`63e6adc`](https://github.com/108yen/profile/commit/63e6adcb0b6d7d165791a31fcfd09aab4e74effa) Thanks [@108yen](https://github.com/108yen)! - Added icon to skills.
+
 ## 1.3.2
 
 ### Patch Changes
