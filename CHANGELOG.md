@@ -1,5 +1,11 @@
 # profile
 
+## 1.3.4
+
+### Patch Changes
+
+- [`0ef9a34`](https://github.com/108yen/profile/commit/0ef9a348feb93fdfa4d9803461f5d2c39831e552) Thanks [@108yen](https://github.com/108yen)! - Fixed inline link style.
+
 ## 1.3.3
 
 ### Patch Changes
