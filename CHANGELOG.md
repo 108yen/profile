@@ -1,5 +1,11 @@
 # profile
 
+## 1.3.5
+
+### Patch Changes
+
+- [`8fb075a`](https://github.com/108yen/profile/commit/8fb075a5b31a30f8e27b1c94bd96f777f9b041db) Thanks [@108yen](https://github.com/108yen)! - Fixed expired tag style.
+
 ## 1.3.4
 
 ### Patch Changes
