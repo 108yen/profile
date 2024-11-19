@@ -53,7 +53,7 @@ ol ol {
 }
 
 .inline-link {
-  margin: 0 0.625rem 0 0.625rem;
+  margin: 0 0.5rem 0 0.5rem;
 }
 
 .link {
@@ -86,4 +86,5 @@ ol ol {
   display: inline-flex;
   gap: 0.25rem;
   align-items: center;
+  vertical-align: bottom;
 }
