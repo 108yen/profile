@@ -1,9 +1,6 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@3.0.3/schema.json",
-  "changelog": [
-    "@changesets/changelog-github",
-    { "repo": "108yen/profile" }
-  ],
+  "changelog": ["@changesets/changelog-github", { "repo": "108yen/profile" }],
   "commit": false,
   "fixed": [],
   "linked": [],

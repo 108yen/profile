@@ -34,8 +34,8 @@ export function Accordion({ children }: AccordionProps) {
 }
 
 interface AccordionItemProps
-  extends PropsWithChildren,
-    HTMLAttributes<HTMLDivElement> {
+  extends HTMLAttributes<HTMLDivElement>,
+    PropsWithChildren {
   index: number
   label: string
 }
