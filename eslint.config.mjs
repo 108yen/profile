@@ -29,7 +29,7 @@ const sourceFilePaths = {
     "**/*.cts",
     "**/*.mts",
     "**/*.tsx",
-    "**/*.d.ts"
+    "**/*.d.ts",
   ],
   js: ["**/*.js", "**/*.cjs", "**/*.mjs", "**/*.jsx"],
   ts: ["**/*.ts", "**/*.cts", "**/*.mts", "**/*.tsx", "**/*.d.ts"],
@@ -37,7 +37,14 @@ const sourceFilePaths = {
 
 /** @type {Pick<TSESLintConfig, "name" | "ignores">} */
 const ignoreTSESConfig = {
-  ignores: [".next/**", "node_modules/**", "**/pnpm-lock.yaml", ".eslintcache"],
+  ignores: [
+    ".next/**",
+    "node_modules/**",
+    "**/pnpm-lock.yaml",
+    ".eslintcache",
+    "out/**",
+    "dist/**",
+  ],
   name: "@twitch-clip/ignores/base",
 }
 
@@ -137,11 +144,11 @@ const typescriptTSESConfigArray = [
       // https://typescript-eslint.io/rules/consistent-type-definitions
       "@typescript-eslint/consistent-type-definitions": "off",
       "@typescript-eslint/no-empty-function": "off",
-      "@typescript-eslint/no-empty-object-type":"off",
+      "@typescript-eslint/no-empty-object-type": "off",
 
       "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/no-inferrable-types": "off",
-      "@typescript-eslint/no-unnecessary-type-constraint": "off" 
+      "@typescript-eslint/no-unnecessary-type-constraint": "off",
     },
   },
 
@@ -279,7 +286,8 @@ const sortTSESConfig = {
   },
   rules: {
     ...perfectionist.configs["recommended-natural"].rules,
-    "perfectionist/sort-classes":"off"
+    "perfectionist/sort-classes": "off",
+    "perfectionist/sort-modules": "off",
   },
 }
 
