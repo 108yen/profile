@@ -96,7 +96,7 @@ jobs:
 
       - name: Run typecheck
         run: pnpm typecheck
-        
+
   build:
     name: Build
 
