@@ -120,7 +120,7 @@ class Observer {
 }
 
 interface BlackholeProps extends CanvasHTMLAttributes<HTMLCanvasElement> {
-  isLoaded?: () => {}
+  isLoaded?: () => void
 }
 
 export function Blackhole({ isLoaded, ...rest }: BlackholeProps) {

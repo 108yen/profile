@@ -2,7 +2,8 @@ import type { Metadata } from "next"
 
 import "@/styles/reset.css"
 import { AnalyticsScript } from "@/components/google-analytics"
-import { AppLayout } from "@/layouts/app-layout"
+import { AppLayout } from "@/layouts"
+import { findPackages } from "find-packages"
 
 export const metadata: Metadata = {
   description: "Web engineer, security specialist",
@@ -33,11 +34,14 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const packages = await findPackages("./")
+  const { version } = packages[0].manifest
+
   return (
     <html lang="en" style={{ colorScheme: "dark" }}>
       <head>
@@ -45,7 +49,7 @@ export default function RootLayout({
       </head>
 
       <body>
-        <AppLayout>{children}</AppLayout>
+        <AppLayout version={version}>{children}</AppLayout>
       </body>
     </html>
   )
