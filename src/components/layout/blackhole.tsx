@@ -119,9 +119,11 @@ class Observer {
   }
 }
 
-interface BlackholeProps extends CanvasHTMLAttributes<HTMLCanvasElement> {}
+interface BlackholeProps extends CanvasHTMLAttributes<HTMLCanvasElement> {
+  isLoaded?: () => {}
+}
 
-export function Blackhole(props: BlackholeProps) {
+export function Blackhole({ isLoaded, ...rest }: BlackholeProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [width, setWidth] = useState(0)
 
@@ -230,10 +232,12 @@ export function Blackhole(props: BlackholeProps) {
     updateUniforms()
     animate()
 
+    isLoaded?.()
+
     return () => {
       window.removeEventListener("resize", onWindowResize)
     }
-  }, [isMobile])
+  }, [isLoaded, isMobile])
 
-  return <canvas ref={canvasRef} {...props} />
+  return <canvas ref={canvasRef} {...rest} />
 }

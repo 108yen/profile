@@ -1,9 +1,8 @@
 import type { Metadata } from "next"
 
 import "@/styles/reset.css"
-import "@/styles/layout.css"
 import { AnalyticsScript } from "@/components/google-analytics"
-import { Blackhole, Footer } from "@/components/layout"
+import { AppLayout } from "@/layouts/app-layout"
 
 export const metadata: Metadata = {
   description: "Web engineer, security specialist",
@@ -46,13 +45,7 @@ export default function RootLayout({
       </head>
 
       <body>
-        <div className="stack">
-          <Blackhole className="background" />
-
-          <div className="container">{children}</div>
-
-          <Footer />
-        </div>
+        <AppLayout>{children}</AppLayout>
       </body>
     </html>
   )
