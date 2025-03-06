@@ -10,7 +10,7 @@ export async function Footer(props: FooterProps) {
 
   return (
     <div className="caption" {...props}>
-      {`v${version}`} ©2024 Kazuki Shirai.
+      {`v${version}`} ©2025 Kazuki Shirai.
     </div>
   )
 }

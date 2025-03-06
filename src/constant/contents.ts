@@ -47,18 +47,11 @@ export const PRODUCTS = [
 
 export const CERTIFICATIONS = [
   {
-    ariaLabel: "CompTIA Security+ Link",
-    expired: true,
-    href: "https://www.credly.com/badges/390af6d6-0529-4c1a-b08d-db17d5c3db2f",
-    title: "CompTIA Security+ certification",
+    ariaLabel: "CISSP Link",
+    href: "https://www.credly.com/badges/18765c56-8bd8-48a6-ba4a-f8f1cb20f549",
+    title: "CISSP",
   },
   { title: "情報処理安全確保支援士" },
-  {
-    ariaLabel: "AWS SAA Link",
-    expired: true,
-    href: "https://www.credly.com/badges/34605602-4be2-47de-8ffe-a85401649b31",
-    title: "AWS Certified Solutions Architect - Associate",
-  },
   {
     ariaLabel: "Associate Cloud Engineer Link",
     href: "https://www.credly.com/badges/13640f30-1c62-4df2-b192-c904ff370f25",
@@ -88,5 +81,17 @@ export const CERTIFICATIONS = [
     ariaLabel: "Professional Cloud Network Engineer Link",
     href: "https://www.credly.com/badges/f1cf6b62-c7f7-47c8-a554-b30261fde3f2",
     title: "Professional Cloud Network Engineer",
+  },
+  {
+    ariaLabel: "CompTIA Security+ Link",
+    expired: true,
+    href: "https://www.credly.com/badges/390af6d6-0529-4c1a-b08d-db17d5c3db2f",
+    title: "CompTIA Security+ certification",
+  },
+  {
+    ariaLabel: "AWS SAA Link",
+    expired: true,
+    href: "https://www.credly.com/badges/34605602-4be2-47de-8ffe-a85401649b31",
+    title: "AWS Certified Solutions Architect - Associate",
   },
 ]

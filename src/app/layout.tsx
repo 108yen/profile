@@ -40,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" style={{ colorScheme: "dark" }}>
+    <html lang="en" style={{ colorScheme: "dark" }} suppressHydrationWarning>
       <head>
         <AnalyticsScript debugMode={process.env.NODE_ENV == "development"} />
       </head>
