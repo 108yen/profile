@@ -1,5 +1,13 @@
 # profile
 
+## 1.3.6
+
+### Patch Changes
+
+- [`0a906fe`](https://github.com/108yen/profile/commit/0a906feda4797f1e07f47ebc76ba176528e148b7) Thanks [@108yen](https://github.com/108yen)! - Blur background of contents.
+
+- [`29bc915`](https://github.com/108yen/profile/commit/29bc9151c540a09a5a91a2e15f07021dd84b2c7f) Thanks [@108yen](https://github.com/108yen)! - Add CISSP to certifications.
+
 ## 1.3.5
 
 ### Patch Changes
