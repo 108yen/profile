@@ -1,5 +1,11 @@
 # profile
 
+## 1.3.7
+
+### Patch Changes
+
+- [`9a3ae48`](https://github.com/108yen/profile/commit/9a3ae48b4edc04d5e47f7b8e7c8bf7de54736428) Thanks [@108yen](https://github.com/108yen)! - Updated skills.
+
 ## 1.3.6
 
 ### Patch Changes
