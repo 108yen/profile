@@ -12,18 +12,7 @@ export const CONTRIBUTING = [
   },
 ]
 
-export const SKILLS = [
-  "Typescript",
-  "React",
-  "Next.js",
-  "Web Accessibility",
-  "ESLint",
-  "Flutter",
-  "Google Analytics",
-  "Google Cloud",
-  "Vercel",
-  "Github Actions",
-]
+export const SKILLS = ["Typescript", "React", "Next.js", "Java", "Spring Boot"]
 
 export const PRODUCTS = [
   {
