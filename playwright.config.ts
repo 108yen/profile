@@ -50,6 +50,9 @@ export default defineConfig({
   /* Run your local dev server before starting the tests */
   webServer: {
     command: "pnpm dev -p 3030",
+    env: {
+      NODE_ENV: "development",
+    },
     reuseExistingServer: true,
     url: "http://localhost:3030",
   },
