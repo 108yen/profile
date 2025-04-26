@@ -24,8 +24,8 @@ importers:
         specifier: 19.1.0
         version: 19.1.0(react@19.1.0)
       three:
-        specifier: ^0.175.0
-        version: 0.175.0
+        specifier: ^0.176.0
+        version: 0.176.0
     devDependencies:
       '@changesets/changelog-github':
         specifier: ^0.5.0
@@ -3040,8 +3040,8 @@ packages:
     resolution: {integrity: sha512-te/NtwBwfiNRLf9Ijqx3T0nlqZiQ2XrrtBvu+cLL8ZRrGkO0NHTug8MYFKyoSrv/sHTaSKfilUkizV6XhxMJ3g==}
     engines: {node: '>=8'}
 
-  three@0.175.0:
-    resolution: {integrity: sha512-nNE3pnTHxXN/Phw768u0Grr7W4+rumGg/H6PgeseNJojkJtmeHJfZWi41Gp2mpXl1pg1pf1zjwR4McM1jTqkpg==}
+  three@0.176.0:
+    resolution: {integrity: sha512-PWRKYWQo23ojf9oZSlRGH8K09q7nRSWx6LY/HF/UUrMdYgN9i1e2OwJYHoQjwc6HF/4lvvYLC5YC1X8UJL2ZpA==}
 
   through@2.3.8:
     resolution: {integrity: sha512-w89qg7PI8wAdvX60bMDP+bFoD5Dvhm9oLheFp5O4a2QF0cSBGsBX4qZmadPMvVqlLJBBci+WqGGOAPvcDeNSVg==}
@@ -6495,7 +6495,7 @@ snapshots:
 
   text-extensions@2.4.0: {}
 
-  three@0.175.0: {}
+  three@0.176.0: {}
 
   through@2.3.8: {}
 
