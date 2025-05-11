@@ -42,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en" style={{ colorScheme: "dark" }} suppressHydrationWarning>
       <head>
-        <AnalyticsScript debugMode={process.env.NODE_ENV == "development"} />
+        <AnalyticsScript debugMode={!process.env.PROD} />
       </head>
 
       <body>
