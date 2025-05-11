@@ -1,5 +1,11 @@
 # profile
 
+## 1.3.8
+
+### Patch Changes
+
+- [#145](https://github.com/108yen/profile/pull/145) [`4ce0a37`](https://github.com/108yen/profile/commit/4ce0a376cd41afae2df1e0effe72a528382a0c94) Thanks [@108yen](https://github.com/108yen)! - Fixed env.
+
 ## 1.3.7
 
 ### Patch Changes
