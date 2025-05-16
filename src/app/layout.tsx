@@ -2,8 +2,9 @@ import type { Metadata } from "next"
 
 import "@/styles/reset.css"
 import "@/styles/layout.css"
+import "@/styles/loading.css"
 import { AnalyticsScript } from "@/components/google-analytics"
-import { Blackhole, Footer } from "@/components/layout"
+import { Blackhole, Footer, Loading } from "@/components/layout"
 
 export const metadata: Metadata = {
   description: "Web engineer, security specialist",
@@ -40,12 +41,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" style={{ colorScheme: "dark" }} suppressHydrationWarning>
+    <html className="dark-scheme" lang="en" suppressHydrationWarning>
       <head>
         <AnalyticsScript debugMode={!process.env.PROD} />
       </head>
 
       <body>
+        <Loading />
+
         <div className="stack">
           <Blackhole className="background" />
 

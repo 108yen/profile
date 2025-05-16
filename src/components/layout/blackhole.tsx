@@ -2,6 +2,7 @@
 import { BLACKHOLE } from "@/constant"
 import raytracer from "@/shader/raytracer.glsl"
 import vertex from "@/shader/vertex.vert"
+import { LoadingEvents } from "@/utils/loadingEvents"
 import { CanvasHTMLAttributes, useEffect, useRef, useState } from "react"
 import {
   Clock,
@@ -171,7 +172,7 @@ export function Blackhole(props: BlackholeProps) {
       filename: string,
       interpolation: typeof LinearFilter | typeof NearestFilter,
     ) {
-      textureLoader.load(filename, (data) => {
+      textureLoader.load(filename, (data: Texture) => {
         const texture = data
         texture.magFilter = interpolation
         texture.minFilter = interpolation
@@ -225,6 +226,8 @@ export function Blackhole(props: BlackholeProps) {
     )
 
     window.addEventListener("resize", onWindowResize, false)
+
+    LoadingEvents.emit("blackholeReady")
 
     onWindowResize()
     updateUniforms()
