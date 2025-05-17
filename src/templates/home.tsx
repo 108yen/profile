@@ -1,5 +1,9 @@
+import Link from "next/link"
+import { ComponentType } from "react"
+
 import { Accordion, AccordionItem } from "@/components/disclosure"
 import { Header } from "@/components/layout"
+import "@/styles/home.css"
 import {
   ESLintIcon,
   FlutterIcon,
@@ -22,9 +26,6 @@ import {
   SKILLS,
   YAMADA_UI,
 } from "@/constant"
-import "@/styles/home.css"
-import Link from "next/link"
-import { ComponentType } from "react"
 
 type IconMapProps = Record<string, ComponentType<any>>
 

@@ -1,8 +1,4 @@
 "use client"
-import { BLACKHOLE } from "@/constant"
-import raytracer from "@/shader/raytracer.glsl"
-import vertex from "@/shader/vertex.vert"
-import { LoadingEvents } from "@/utils/loadingEvents"
 import { CanvasHTMLAttributes, useEffect, useRef, useState } from "react"
 import {
   Clock,
@@ -22,6 +18,11 @@ import {
   Vector3,
   WebGLRenderer,
 } from "three"
+
+import { BLACKHOLE } from "@/constant"
+import raytracer from "@/shader/raytracer.glsl"
+import vertex from "@/shader/vertex.vert"
+import { LoadingEvents } from "@/utils/loadingEvents"
 
 class Observer {
   isMobile = false
