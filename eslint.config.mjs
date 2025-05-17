@@ -44,6 +44,8 @@ const ignoreTSESConfig = {
     ".eslintcache",
     "out/**",
     "dist/**",
+    "playwright-report/**",
+    "test-results/**",
   ],
   name: "@twitch-clip/ignores/base",
 }
