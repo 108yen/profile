@@ -1,10 +1,11 @@
+import Link from "next/link"
+
 import {
   BlueskyIcon,
   GithubIcon,
   XIcon,
   ZennIcon,
 } from "@/components/media-and-icons"
-import Link from "next/link"
 import "@/styles/header.css"
 
 export function Header() {

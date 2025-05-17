@@ -1,8 +1,9 @@
 "use client"
 
-import { LoadingEvents } from "@/utils/loadingEvents"
-import "@/styles/loading.css"
 import { useEffect, useState } from "react"
+
+import "@/styles/loading.css"
+import { LoadingEvents } from "@/utils/loadingEvents"
 
 export function Loading() {
   const [visible, setVisible] = useState(true)
