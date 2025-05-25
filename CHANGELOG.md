@@ -1,5 +1,11 @@
 # profile
 
+## 1.4.0
+
+### Minor Changes
+
+- [#147](https://github.com/108yen/profile/pull/147) [`9493276`](https://github.com/108yen/profile/commit/9493276b779bfb9dbac259dbf10bef9589cfaf4e) Thanks [@108yen](https://github.com/108yen)! - Add loading display.
+
 ## 1.3.8
 
 ### Patch Changes
