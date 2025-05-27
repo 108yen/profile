@@ -45,22 +45,20 @@ export default function Page() {
       positions = []
       velocities = []
       for (let i = 0; i < numPoints; i++) {
-        // Fibonacci sphere algorithm
-        const phi = Math.acos(1 - (2 * (i + 0.5)) / numPoints)
-        const theta = Math.PI * (1 + Math.sqrt(5)) * (i + 0.5)
-        const r = 30
-        const x = r * Math.sin(phi) * Math.cos(theta)
-        const y = r * Math.sin(phi) * Math.sin(theta)
-        const z = r * Math.cos(phi)
+        // 円形配置アルゴリズム（極座標使用）
+        const r = Math.sqrt(Math.random()) * 30 // 円の半径内にランダム配置
+        const theta = Math.random() * 2 * Math.PI
+        const x = r * Math.cos(theta)
+        const y = r * Math.sin(theta)
+        const z = 0 // 2次元なのでz座標は0
         positions.push(x, y, z)
-        // ランダムな速度ベクトル（小さい値）
+        // ランダムな速度ベクトル（2次元のみ、z成分は0）
         const speed = 0.1 * Math.random()
         const thetaV = Math.random() * 2 * Math.PI
-        const phiV = Math.acos(2 * Math.random() - 1)
         velocities.push(
-          speed * Math.sin(phiV) * Math.cos(thetaV),
-          speed * Math.sin(phiV) * Math.sin(thetaV),
-          speed * Math.cos(phiV),
+          speed * Math.cos(thetaV),
+          speed * Math.sin(thetaV),
+          0, // z方向の速度は0
         )
       }
       geometry = new BufferGeometry()
@@ -87,25 +85,23 @@ export default function Page() {
           // 位置を更新
           let x = pos.getX(i) + velocities[3 * i]
           let y = pos.getY(i) + velocities[3 * i + 1]
-          let z = pos.getZ(i) + velocities[3 * i + 2]
-          const r = Math.sqrt(x * x + y * y + z * z)
-          // 球の外に出たら反射（速度ベクトルを反転）
+          const r = Math.sqrt(x * x + y * y) // 2次元での距離計算
+          // 円の外に出たら反射（速度ベクトルを反転）
           if (r > 30) {
-            // 球面上に戻す
+            // 円周上に戻す
             x = (x * 30) / r
             y = (y * 30) / r
-            z = (z * 30) / r
-            // 速度ベクトルを反転
+            // 速度ベクトルを反転（x, yのみ）
             velocities[3 * i] *= -1
             velocities[3 * i + 1] *= -1
-            velocities[3 * i + 2] *= -1
           }
           pos.setX(i, x)
           pos.setY(i, y)
-          pos.setZ(i, z)
+          // z座標は0のまま
+          pos.setZ(i, 0)
         }
         pos.needsUpdate = true
-        cloudRef.current.rotation.y += 0.001
+        cloudRef.current.rotation.z += 0.001 // z軸回転に変更（2次元での回転）
       }
 
       renderer.render(scene, camera)
