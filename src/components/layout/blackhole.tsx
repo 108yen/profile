@@ -1,4 +1,5 @@
 "use client"
+
 import { CanvasHTMLAttributes, useEffect, useRef, useState } from "react"
 import {
   Clock,
@@ -124,13 +125,13 @@ class Observer {
 interface BlackholeProps extends CanvasHTMLAttributes<HTMLCanvasElement> {}
 
 export function Blackhole(props: BlackholeProps) {
-  const canvasRef = useRef<HTMLCanvasElement>(null)
+  const ref = useRef<HTMLCanvasElement>(null)
   const [width, setWidth] = useState(0)
 
   const isMobile = width < 768
 
   useEffect(() => {
-    const canvas = canvasRef.current
+    const canvas = ref.current
     if (!canvas) return
 
     const observer = new Observer(isMobile)
@@ -239,5 +240,5 @@ export function Blackhole(props: BlackholeProps) {
     }
   }, [isMobile])
 
-  return <canvas ref={canvasRef} {...props} />
+  return <canvas ref={ref} {...props} />
 }

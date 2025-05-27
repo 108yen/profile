@@ -1,6 +1,7 @@
 .home-container {
   margin: 2.5rem;
   backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
   border-radius: 0.375rem;
 }
 
