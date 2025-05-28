@@ -217,13 +217,17 @@ export function ParticleSphere({
     }
 
     getGeometryPosition()
-    requestAnimationFrame(render)
+    const frameId = requestAnimationFrame(render)
     render()
 
     return () => {
       canvas.removeEventListener("mousemove", handleMouseMove)
       canvas.removeEventListener("mouseenter", handleMouseEnter)
       canvas.removeEventListener("mouseleave", handleMouseLeave)
+
+      cancelAnimationFrame(frameId)
+      renderer.dispose()
+      scene.clear()
     }
   }, [height, numParticles, width])
 
