@@ -7,7 +7,7 @@
 @media (max-width: 768px) {
   .title {
     font-weight: 100;
-    font-size: 2rem;
+    font-size: 1.75rem;
     margin: 0 0 0.3rem 0;
   }
 }
@@ -41,4 +41,15 @@
   &:hover {
     opacity: 0.7;
   }
+}
+
+.particle-sphere {
+  background: transparent;
+  margin-top: 0.25rem;
+}
+
+.v-stack {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
 }
