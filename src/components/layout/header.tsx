@@ -8,11 +8,19 @@ import {
 } from "@/components/media-and-icons"
 import "@/styles/header.css"
 
+import { ParticleSphere } from "./particle-sphere"
+
 export function Header() {
   return (
     <header>
-      <h1 className="title">Kazuki Shirai / 108yen</h1>
-      <p className="description">Web engineer, Security specialist</p>
+      <div className="v-stack">
+        <div>
+          <h1 className="title">Kazuki Shirai / 108yen</h1>
+          <p className="description">Web engineer, Security specialist</p>
+        </div>
+
+        <ParticleSphere className="particle-sphere" />
+      </div>
 
       <nav className="links">
         <ol>
