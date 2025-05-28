@@ -18,9 +18,9 @@ interface ParticleSphereProps extends CanvasHTMLAttributes<HTMLCanvasElement> {
 }
 
 export function ParticleSphere({
-  height = 70,
+  height = 55,
   numParticles = 2000,
-  width = 70,
+  width = 55,
   ...props
 }: ParticleSphereProps) {
   const ref = useRef<HTMLCanvasElement>(null)

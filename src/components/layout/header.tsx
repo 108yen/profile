@@ -13,13 +13,14 @@ import { ParticleSphere } from "./particle-sphere"
 export function Header() {
   return (
     <header>
-      <div style={{ alignItems: "center", display: "flex", gap: "0.5rem" }}>
-        <ParticleSphere style={{ background: "transparent" }} />
-
+      <div style={{ alignItems: "flex-start", display: "flex", gap: "0.5rem" }}>
         <div>
           <h1 className="title">Kazuki Shirai / 108yen</h1>
           <p className="description">Web engineer, Security specialist</p>
         </div>
+        <ParticleSphere
+          style={{ background: "transparent", marginTop: "0.25rem" }}
+        />
       </div>
 
       <nav className="links">
