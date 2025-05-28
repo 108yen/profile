@@ -1,5 +1,17 @@
 # profile
 
+## 1.4.0
+
+### Minor Changes
+
+- [#147](https://github.com/108yen/profile/pull/147) [`9493276`](https://github.com/108yen/profile/commit/9493276b779bfb9dbac259dbf10bef9589cfaf4e) Thanks [@108yen](https://github.com/108yen)! - Add loading display.
+
+- [#154](https://github.com/108yen/profile/pull/154) [`a721bc7`](https://github.com/108yen/profile/commit/a721bc721fd19cf862e448bb1f9324511dfbd448) Thanks [@108yen](https://github.com/108yen)! - Added `ParticleSphere`.
+
+### Patch Changes
+
+- [#154](https://github.com/108yen/profile/pull/154) [`c758dbe`](https://github.com/108yen/profile/commit/c758dbe9069f6be538c9cdb52489b396d688bcfb) Thanks [@108yen](https://github.com/108yen)! - Updated skill icons color.
+
 ## 1.3.8
 
 ### Patch Changes
