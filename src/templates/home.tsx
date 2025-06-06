@@ -1,6 +1,5 @@
 import Link from "next/link"
 import { ComponentType } from "react"
-
 import { Accordion, AccordionItem } from "@/components/disclosure"
 import { Header } from "@/components/layout"
 import "@/styles/home.css"

@@ -1,5 +1,4 @@
 import Link from "next/link"
-
 import {
   BlueskyIcon,
   GithubIcon,
@@ -7,7 +6,6 @@ import {
   ZennIcon,
 } from "@/components/media-and-icons"
 import "@/styles/header.css"
-
 import { ParticleSphere } from "./particle-sphere"
 
 export function Header() {

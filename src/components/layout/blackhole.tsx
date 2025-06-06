@@ -19,7 +19,6 @@ import {
   Vector3,
   WebGLRenderer,
 } from "three"
-
 import { BLACKHOLE } from "@/constant"
 import raytracer from "@/shader/raytracer.glsl"
 import vertex from "@/shader/vertex.vert"
