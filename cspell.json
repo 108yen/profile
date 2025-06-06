@@ -23,5 +23,6 @@
     "tseslint",
     "typecheck",
     "Zenn"
-  ]
+  ],
+  "ignorePaths": []
 }
