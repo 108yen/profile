@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect, useState } from "react"
-
 import "@/styles/loading.css"
 import { LoadingEvents } from "@/utils/loadingEvents"
 

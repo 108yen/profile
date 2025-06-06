@@ -1,8 +1,8 @@
 import type { Metadata } from "next"
-
 import "@/styles/reset.css"
 import "@/styles/layout.css"
 import "@/styles/loading.css"
+import { PropsWithChildren } from "react"
 import { AnalyticsScript } from "@/components/google-analytics"
 import { Blackhole, Footer, Loading } from "@/components/layout"
 
@@ -35,11 +35,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html className="dark-scheme" lang="en" suppressHydrationWarning>
       <head>

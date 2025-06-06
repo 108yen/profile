@@ -1,7 +1,5 @@
 import { findPackages } from "find-packages"
-
 import "@/styles/footer.css"
-
 import { HTMLAttributes } from "react"
 
 interface FooterProps extends HTMLAttributes<HTMLElement> {}
