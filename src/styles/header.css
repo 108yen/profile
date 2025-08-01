@@ -47,9 +47,3 @@
   background: transparent;
   margin-top: 0.25rem;
 }
-
-.v-stack {
-  display: flex;
-  gap: 0.5rem;
-  align-items: flex-start;
-}
