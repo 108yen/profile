@@ -1,5 +1,13 @@
 # profile
 
+## 1.4.1
+
+### Patch Changes
+
+- [#186](https://github.com/108yen/profile/pull/186) [`7c1d360`](https://github.com/108yen/profile/commit/7c1d360f0453260ca32b35e981b6fe59c3de2bea) Thanks [@108yen](https://github.com/108yen)! - Fixed list accessibility violation.
+
+- [#186](https://github.com/108yen/profile/pull/186) [`e090c51`](https://github.com/108yen/profile/commit/e090c512ae6de5729deac3d01532b91626a9f20b) Thanks [@108yen](https://github.com/108yen)! - Removed particle sphere.
+
 ## 1.4.0
 
 ### Minor Changes
