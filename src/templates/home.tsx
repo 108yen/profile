@@ -67,20 +67,22 @@ export function Home() {
 
               <li>Contributing</li>
 
-              <ol>
-                {CONTRIBUTING.map(({ ariaLabel, href, title }, index) => (
-                  <li key={index}>
-                    <Link
-                      aria-label={ariaLabel}
-                      className="link"
-                      href={href}
-                      target="_blank"
-                    >
-                      {title}
-                    </Link>
-                  </li>
-                ))}
-              </ol>
+              <li className="non-list">
+                <ol>
+                  {CONTRIBUTING.map(({ ariaLabel, href, title }, index) => (
+                    <li key={index}>
+                      <Link
+                        aria-label={ariaLabel}
+                        className="link"
+                        href={href}
+                        target="_blank"
+                      >
+                        {title}
+                      </Link>
+                    </li>
+                  ))}
+                </ol>
+              </li>
             </ol>
           </AccordionItem>
 

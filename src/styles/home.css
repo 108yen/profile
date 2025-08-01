@@ -91,3 +91,7 @@ ol ol {
   align-items: center;
   vertical-align: bottom;
 }
+
+.non-list {
+  list-style: none;
+}
