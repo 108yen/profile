@@ -1,5 +1,11 @@
 # profile
 
+## 1.4.2
+
+### Patch Changes
+
+- [#192](https://github.com/108yen/profile/pull/192) [`e1fc428`](https://github.com/108yen/profile/commit/e1fc428dfe99e4264689cbf5ae8921fac57c086d) Thanks [@108yen](https://github.com/108yen)! - Added sizu.me link.
+
 ## 1.4.1
 
 ### Patch Changes
