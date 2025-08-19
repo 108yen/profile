@@ -2,6 +2,7 @@ import Link from "next/link"
 import {
   BlueskyIcon,
   GithubIcon,
+  SizuMeIcon,
   XIcon,
   ZennIcon,
 } from "@/components/media-and-icons"
@@ -51,6 +52,15 @@ export function Header() {
               target="_blank"
             >
               <BlueskyIcon className="icon" />
+            </Link>
+          </li>
+          <li>
+            <Link
+              aria-label="SizuMe Link"
+              href="https://sizu.me/108yen"
+              target="_blank"
+            >
+              <SizuMeIcon className="icon" />
             </Link>
           </li>
         </ol>
