@@ -23,7 +23,8 @@
     "TSES",
     "tseslint",
     "typecheck",
-    "Zenn"
+    "Zenn",
+    "turbopack"
   ],
   "ignorePaths": []
 }

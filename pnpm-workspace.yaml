@@ -1,0 +1,15 @@
+packages:
+  - .
+
+ignoredBuiltDependencies:
+  - esbuild
+  - sharp
+
+minimumReleaseAge: 10080
+
+minimumReleaseAgeExclude:
+  - next
+  - "@next/env"
+
+onlyBuiltDependencies:
+  - lefthook
