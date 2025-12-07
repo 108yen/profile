@@ -23,6 +23,7 @@ const ignoresConfig: Linter.Config = {
     "**/.next/**",
     "**/.turbo/**",
     "**/dist/**",
+    "**/out/**",
     "**/@types/**",
     "**/node_modules/**",
     "**/build/**",
