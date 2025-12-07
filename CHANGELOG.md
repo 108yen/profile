@@ -1,5 +1,11 @@
 # profile
 
+## 1.4.3
+
+### Patch Changes
+
+- [#222](https://github.com/108yen/profile/pull/222) [`fcdb903`](https://github.com/108yen/profile/commit/fcdb903b7203c9ffd9dbfdb1cb25e67eb9c2fe4c) Thanks [@108yen](https://github.com/108yen)! - Updated next to v16.
+
 ## 1.4.2
 
 ### Patch Changes
