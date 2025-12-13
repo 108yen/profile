@@ -1,5 +1,0 @@
----
-"profile": patch
----
-
-Vulnarability countermeasures.

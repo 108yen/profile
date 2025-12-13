@@ -1,5 +1,11 @@
 # profile
 
+## 1.4.4
+
+### Patch Changes
+
+- [`2293be5`](https://github.com/108yen/profile/commit/2293be5cb0e0c285ed8c0cabc5caf2764078ffad) Thanks [@108yen](https://github.com/108yen)! - Vulnarability countermeasures.
+
 ## 1.4.3
 
 ### Patch Changes
