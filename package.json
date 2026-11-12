@@ -2,7 +2,7 @@
   "name": "profile",
   "version": "1.4.4",
   "private": true,
-  "packageManager": "pnpm@10.34.8+sha512.f627a8e971343afe49dfd0f63d028234201dfa831d5cb588733e1e5f8db26bf16989a32161ab5c1b4db3b1fdbc373160606b5b89e002df6dd19a85adf91fc5a8",
+  "packageManager": "pnpm@12.18.0+sha512.9d7882d5dc82147ecfc4e062aa34834e0ad0296710a1837a1115ae012127d36b7109e321ac1598a1dd0a65597681b1e99917e12ed0d749eae91187943363beb3",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
